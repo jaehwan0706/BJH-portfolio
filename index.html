@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>복재환 | 개발자 포트폴리오</title>
+<meta name="description" content="신입 개발자 복재환의 포트폴리오. Frontend · Backend · AI를 넘나들며 완성한 8개 프로젝트를 소개합니다." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="복재환 | 개발자 포트폴리오" />
+<meta property="og:description" content="신입 개발자 복재환의 포트폴리오. Frontend · Backend · AI를 넘나들며 완성한 8개 프로젝트를 소개합니다." />
+<meta property="og:image" content="assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23f989b3'/%3E%3Ctext x='50' y='68' font-size='52' font-family='sans-serif' font-weight='700' fill='black' text-anchor='middle'%3E복%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fastly.jsdelivr.net" />
+<link rel="preconnect" href="https://cdn.simpleicons.org" />
+<link rel="stylesheet" href="style.css?v=9" />
+<!-- leeboa.com과 동일한 폰트: 한글은 SUIT, 영문/숫자는 Exo 2 -->
+<style>
+@font-face { font-family: SUIT; src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: SUIT; src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: SUIT; src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,700;0,800&display=swap" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <button id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">☰</button>
+    <a href="#top" class="logo">✳</a>
+    <a href="https://github.com/jaehwan0706" target="_blank" rel="noopener" class="github-btn eng">See on GitHub</a>
+  </header>
+
+  <!-- ================= MENU OVERLAY ================= -->
+  <div id="menu-overlay" class="menu-overlay" hidden>
+    <button id="menu-close" class="menu-close" aria-label="메뉴 닫기">✕</button>
+    <nav class="menu-links">
+      <a href="#top" class="menu-link" data-menu-link>HOME</a>
+      <a href="#projects" class="menu-link" data-menu-link>PROJECT</a>
+      <a href="#about" class="menu-link" data-menu-link>ABOUT</a>
+    </nav>
+    <div class="menu-cards">
+      <div class="menu-card menu-card-about">
+        <span class="menu-card-label eng">ABOUT ME</span>
+        <div class="menu-card-photo">🧑‍💻</div>
+      </div>
+      <div class="menu-card menu-card-contact">
+        <span class="menu-card-label eng">CONTACT</span>
+        <div class="menu-card-body">
+          <div><span class="eng">EMAIL</span><strong>jaehwan0706@gmail.com</strong></div>
+          <div><span class="eng">GITHUB</span><strong>github.com/jaehwan0706</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HOME ================= -->
+  <main id="page-home" class="page-home">
+    <section class="home-hero">
+      <h1 class="hero-heading eng">
+        <div class="hero-line" data-align="start">
+          <span class="hero-word">RELIABLE BACKEND</span>
+          <button class="hero-callout" type="button" aria-label="인사 메모 보기">
+            <span class="hero-callout-icon" aria-hidden="true">💻</span>
+            <span class="hero-callout-dot" aria-hidden="true"></span>
+            <span class="hero-callout-note">안녕하세요! 신뢰할 수 있는 백엔드를 만드는 개발자 복재환입니다.</span>
+          </button>
+        </div>
+        <div class="hero-line" data-align="center">
+          <span class="hero-word">AI-POWERED SERVICE</span>
+        </div>
+        <div class="hero-line" data-align="end">
+          <button class="hero-callout" type="button" aria-label="운동 메모 보기">
+            <span class="hero-callout-icon" aria-hidden="true">🏋️</span>
+            <span class="hero-callout-dot" aria-hidden="true"></span>
+            <span class="hero-callout-note">개발도 결국 체력싸움이라 생각해서, 틈틈이 운동하며 컨디션을 관리하려고 노력합니다.</span>
+          </button>
+          <span class="hero-word">FULL-STACK</span>
+        </div>
+        <div class="hero-line" data-align="start">
+          <span class="hero-word">DELIVERY</span>
+        </div>
+      </h1>
+    </section>
+
+    <section class="home-terminal">
+      <div class="terminal-block">
+        <span class="terminal-text" id="terminal-text"></span><span class="terminal-cursor">_</span>
+      </div>
+    </section>
+
+    <section class="home-overview">
+      <div class="overview-rule"></div>
+      <span class="overview-label eng">OVERVIEW</span>
+      <p class="overview-text">
+        Project 페이지에는 개인 · 팀 프로젝트와 실무에서 진행한 프로젝트의 결과가 담겨 있습니다. 이 과정에서 고민했던 점, 해결 방법, 회고를 통해
+        저의 기술 스택과 문제 해결 능력을 확인하실 수 있습니다. About 페이지에서는 저의 기술과 커리어, 활동을 간략히 소개합니다.
+      </p>
+      <div class="overview-nav">
+        <a href="#projects" class="overview-nav-card">
+          <strong class="eng">Project</strong>
+          <span>8개 프로젝트, 문제 해결 과정과 기술 스택</span>
+        </a>
+        <a href="#about" class="overview-nav-card">
+          <strong class="eng">About</strong>
+          <span>나의 기술, 커리어, 활동과 수상</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="home-contact">
+      <div class="contact-rule"></div>
+      <span class="contact-label eng">CONTACT</span>
+      <h2 class="contact-heading">편하게 연락 주세요</h2>
+      <a class="contact-email eng" href="mailto:jaehwan0706@gmail.com">jaehwan0706@gmail.com</a>
+      <div class="contact-cols">
+        <div class="contact-col">
+          <p>합류 제안이나 프로젝트 관련 문의는 언제든 환영이에요. 메일 주시면 최대한 빠르게 답장드릴게요.</p>
+          <a class="contact-link eng" href="mailto:jaehwan0706@gmail.com">메일 보내기 →</a>
+        </div>
+        <div class="contact-col">
+          <p>가벼운 개발 이야기나 포트폴리오에 대한 피드백도 좋아요. 제 경력이 궁금하시다면 이력서도 준비되어 있어요.</p>
+          <a class="contact-link eng" href="#" data-resume-link>이력서 보러가기 →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= PROJECTS ================= -->
+  <main id="page-projects" hidden>
+    <div class="page-projects-head">
+      <h1 class="page-heading">MY PROJECT <span class="heading-emoji">🚀</span></h1>
+      <p class="page-sub">Frontend, Backend, AI를 넘나들며 문제를 해결하기 위해 Java, Spring Boot, React, Python으로 만든 프로젝트입니다.</p>
+      <div id="project-filters" class="filter-tabs"><!-- JS로 렌더링 --></div>
+    </div>
+    <div id="project-grid" class="project-list"><!-- JS로 렌더링 --></div>
+  </main>
+
+  <!-- ================= PROJECT DETAIL ================= -->
+  <main id="page-project-detail" hidden>
+    <div class="detail-layout">
+      <aside class="detail-sidebar">
+        <a href="#projects" class="back-link eng">← Project 목록</a>
+        <div id="project-detail-side"><!-- JS로 렌더링 --></div>
+      </aside>
+      <div class="detail-main">
+        <div id="project-detail-main"><!-- JS로 렌더링 --></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= ABOUT ================= -->
+  <main id="page-about" class="page" hidden>
+    <h1 class="page-heading">About <span class="heading-emoji">🌱</span></h1>
+
+    <blockquote class="about-quote">
+      나무는 눈에 보이는 가지를 뻗기 전에, 보이지 않는 땅속에서 먼저 뿌리를 깊게 내립니다.
+      뿌리가 얕으면 작은 바람에도 흔들리지만, 깊게 내린 뿌리는 큰 폭풍에도 쓰러지지 않고 오히려 더 크게 자랍니다.
+      기초를 다지는 시간에 조급해하지 않고, 그 뿌리의 힘으로 끝까지 성장하는 개발자가 되겠습니다.
+      <cite class="eng">ROOT — 뿌리, 성장의 원칙</cite>
+    </blockquote>
+
+    <h2 class="about-subtitle">나의 기술들</h2>
+    <div id="about-skills" class="skill-groups"><!-- JS로 렌더링 --></div>
+
+    <h2 class="about-subtitle">커리어 타임라인</h2>
+    <ol id="timeline" class="timeline"><!-- JS로 렌더링 --></ol>
+
+    <h2 class="about-subtitle">활동 &amp; 수상</h2>
+    <div id="activity-grid" class="activity-grid"><!-- JS로 렌더링 --></div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-contacts">
+        <a href="mailto:jaehwan0706@gmail.com">jaehwan0706@gmail.com</a>
+        <a href="https://github.com/jaehwan0706" target="_blank" rel="noopener">https://github.com/jaehwan0706</a>
+      </div>
+      <nav class="footer-nav">
+        <a href="#top">🏠 Home</a>
+        <a href="#projects">📂 Project</a>
+        <a href="#about">🌱 About</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© 2026 복재환. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>

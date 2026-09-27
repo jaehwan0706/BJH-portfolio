@@ -1,0 +1,53 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif">
+  <rect width="760" height="460" fill="#ffffff"/>
+
+  <!-- relationship lines -->
+  <g stroke="#c7c7d1" stroke-width="1.5" fill="none">
+    <path d="M 190 120 L 190 180" />
+    <path d="M 300 220 L 420 220" />
+    <path d="M 190 260 L 190 320" />
+  </g>
+  <g font-size="11" fill="#8a8a93">
+    <text x="196" y="150">1:N</text>
+    <text x="345" y="212">1:N</text>
+    <text x="196" y="292">1:N</text>
+  </g>
+
+  <!-- EntityUser -->
+  <g>
+    <rect x="70" y="40" width="240" height="80" rx="12" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="88" y="64" font-size="14" font-weight="700" fill="#111318">EntityUser</text>
+    <text x="88" y="84" font-size="11" fill="#52525b">PK id, userid, userpw</text>
+    <text x="88" y="100" font-size="11" fill="#52525b">name, phone, email, role, address</text>
+  </g>
+
+  <!-- boards -->
+  <g>
+    <rect x="70" y="180" width="240" height="80" rx="12" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+    <text x="88" y="204" font-size="14" font-weight="700" fill="#111318">boards</text>
+    <text x="88" y="224" font-size="11" fill="#52525b">PK id, FK userid</text>
+    <text x="88" y="240" font-size="11" fill="#52525b">category, title, content, createdAt</text>
+  </g>
+
+  <!-- comments -->
+  <g>
+    <rect x="420" y="180" width="240" height="80" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="438" y="204" font-size="14" font-weight="700" fill="#111318">comments</text>
+    <text x="438" y="224" font-size="11" fill="#52525b">PK id, FK userid, FK boardid</text>
+    <text x="438" y="240" font-size="11" fill="#52525b">content, createdAt</text>
+  </g>
+
+  <!-- bookmarks -->
+  <g>
+    <rect x="70" y="320" width="240" height="100" rx="12" fill="#f6f6f8" stroke="#8a8a93" stroke-width="1.5"/>
+    <text x="88" y="344" font-size="14" font-weight="700" fill="#111318">bookmarks</text>
+    <text x="88" y="364" font-size="11" fill="#52525b">PK id, FK userid</text>
+    <text x="88" y="380" font-size="11" fill="#52525b">hid, hname, haddress, htel</text>
+    <text x="88" y="396" font-size="11" fill="#52525b">hlat, hlon, distance, created_at</text>
+  </g>
+
+  <!-- boards -> comments -->
+  <g stroke="#c7c7d1" stroke-width="1.5" fill="none">
+    <path d="M 310 220 L 420 220" />
+  </g>
+</svg>
