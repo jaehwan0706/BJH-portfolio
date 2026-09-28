@@ -259,7 +259,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL (PyMySQL)"] },
       { label: "API · 통신", items: ["MQTT (Paho-MQTT)"] },
     ],
-    links: { github: GITHUB_PROFILE },
+    links: { github: "https://github.com/jaehwan0706/mqtt-vibration-visualizer" },
     images: [
       { src: "assets/vibration-sensor/mockup.svg", alt: "진동 센서 모니터링 대시보드 목업", caption: "실시간 FFT 스펙트럼 · 센서 상태 대시보드 (AI 목업 이미지)" },
     ],
