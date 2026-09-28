@@ -92,7 +92,7 @@ const PROJECTS = [
       { label: "LLM · 임베딩", items: ["llama-cpp-python (Qwen GGUF)", "nomic-embed-text"] },
       { label: "데이터 · 문서", items: ["SQLite (sqlite-vec)", "openpyxl", "python-docx", "pypdf"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: GITHUB_PROFILE },
     images: [
       { src: "assets/nuri/desktop-mockup.svg", alt: "누리 문서 자동화 데스크톱 앱 목업", caption: "문서 자동화 처리 화면 (AI 목업 이미지)" },
     ],
@@ -149,7 +149,7 @@ const PROJECTS = [
       { label: "인증 · 지갑", items: ["Web3Auth", "Octomo"] },
       { label: "블록체인", items: ["Hyperledger Fabric (포인트)", "Ethereum (NFT 래플)"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: GITHUB_PROFILE },
     images: [
       { src: "assets/nofake/hero.png", alt: "NOFAKE 포인트 교환 메인 화면", caption: "포인트 교환 플랫폼 메인" },
       { src: "assets/nofake/raffle-list.png", alt: "래플 이벤트 목록", caption: "진행 중인 래플 이벤트" },
@@ -178,7 +178,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL"] },
       { label: "API · 연동", items: ["국립중앙의료원 Open API", "Kakao Map API"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: GITHUB_PROFILE },
     images: [
       { src: "assets/goldenlink/hospital-finder.png", alt: "병원·응급실 찾기 메인 화면", caption: "지도 기반 응급의료시설 찾기" },
       { src: "assets/goldenlink/first-aid-guide.png", alt: "상황별 응급처치 가이드 화면", caption: "상황별 응급처치 가이드" },
@@ -207,7 +207,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL"] },
       { label: "API · 인증", items: ["JWT", "Spring Security"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: GITHUB_PROFILE },
     images: [
       { src: "assets/generation-road/mockup.svg", alt: "세대로드 여행 코스 추천 화면 목업", caption: "세대별 여행 코스 추천 화면 (AI 목업 이미지)" },
     ],
@@ -233,7 +233,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL"] },
       { label: "API · 인증", items: ["Kakao Map API", "JWT", "Spring Security"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: GITHUB_PROFILE },
     images: [
       { src: "assets/econavi/mockup.svg", alt: "EcoNavi 지도 기반 친환경 활동 화면 목업", caption: "지도 기반 친환경 활동 안내 화면 (AI 목업 이미지)" },
     ],
@@ -259,7 +259,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL (PyMySQL)"] },
       { label: "API · 통신", items: ["MQTT (Paho-MQTT)"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: GITHUB_PROFILE },
     images: [
       { src: "assets/vibration-sensor/mockup.svg", alt: "진동 센서 모니터링 대시보드 목업", caption: "실시간 FFT 스펙트럼 · 센서 상태 대시보드 (AI 목업 이미지)" },
     ],

@@ -130,7 +130,7 @@ button { font-family: inherit; }
 }
 .menu-link:hover { opacity: 0.6; }
 
-.menu-cards { display: flex; flex-wrap: wrap; gap: 20px; max-width: 420px; margin-left: auto; }
+.menu-cards { display: flex; flex-wrap: wrap; gap: 20px; max-width: 680px; margin-left: auto; }
 .menu-card {
   background: var(--ink);
   color: var(--bg);
@@ -140,6 +140,7 @@ button { font-family: inherit; }
   position: relative;
   min-height: 180px;
 }
+.menu-card-contact { flex: 2 1 320px; }
 .menu-card-label {
   writing-mode: vertical-rl;
   font-family: var(--font-eng);
@@ -162,7 +163,7 @@ button { font-family: inherit; }
   font-size: 0.8rem;
 }
 .menu-card-contact .menu-card-body span { display: block; font-family: var(--font-eng); color: #999; font-size: 0.68rem; letter-spacing: 0.05em; margin-bottom: 2px; }
-.menu-card-contact .menu-card-body strong { font-weight: var(--weight-default); word-break: break-all; }
+.menu-card-contact .menu-card-body strong { font-weight: var(--weight-default); overflow-wrap: anywhere; }
 
 /* ---------------- PAGES ---------------- */
 .page { max-width: var(--max-width); margin: 0 auto; padding: 130px 6% 100px; }
