@@ -194,9 +194,16 @@ const PROJECTS = [
     ],
     links: { github: "https://github.com/jaehwan0706/Goldenlink" },
     images: [
+      { src: "assets/goldenlink/main-page.png", alt: "Goldenlink 메인 페이지", caption: "메인 페이지", wide: true },
       { src: "assets/goldenlink/hospital-finder.png", alt: "병원·응급실 찾기 메인 화면", caption: "지도 기반 응급의료시설 찾기" },
       { src: "assets/goldenlink/first-aid-guide.png", alt: "상황별 응급처치 가이드 화면", caption: "상황별 응급처치 가이드" },
+      { src: "assets/goldenlink/aed.png", alt: "Goldenlink AED 사용법 안내 화면", caption: "AED 사용법 안내", wide: true },
       { src: "assets/goldenlink/signup.png", alt: "회원가입 화면", caption: "회원가입" },
+      { src: "assets/goldenlink/login.png", alt: "Goldenlink 로그인 화면", caption: "로그인", wide: true },
+      { src: "assets/goldenlink/emergency.png", alt: "Goldenlink 긴급 상황 알림 화면", caption: "긴급 상황 알림", wide: true },
+      { src: "assets/goldenlink/board.png", alt: "Goldenlink 정보공유 게시판 화면", caption: "정보공유 게시판", wide: true },
+      { src: "assets/goldenlink/notice.png", alt: "Goldenlink 공지사항 화면", caption: "공지사항", wide: true },
+      { src: "assets/goldenlink/inquiry.png", alt: "Goldenlink 관리자 문의 게시판 화면", caption: "관리자 문의 게시판", wide: true },
       { src: "assets/erd-goldenlink.svg", alt: "Goldenlink ERD", caption: "schema.sql 기반 ERD — EntityUser · boards · comments · bookmarks" },
     ],
     retrospective:
@@ -248,7 +255,16 @@ const PROJECTS = [
       { label: "API · 인증", items: ["Kakao Map API", "JWT", "Spring Security"] },
     ],
     links: { github: "https://github.com/jaehwan0706/econavi-app-BE" },
+    layout: "phones",
     images: [
+      { src: "assets/econavi/01-splash.png", alt: "EcoNavi 스플래시 와이어프레임", caption: "스플래시 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/02-login.png", alt: "EcoNavi 로그인 와이어프레임", caption: "로그인 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/03-terms.png", alt: "EcoNavi 약관 동의 와이어프레임", caption: "약관 동의 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/04-list.png", alt: "EcoNavi 목록 와이어프레임", caption: "목록 화면 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/05-map.png", alt: "EcoNavi 지도 와이어프레임", caption: "지도 화면 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/06-detail.png", alt: "EcoNavi 상세 정보 와이어프레임", caption: "상세 정보 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/07-points.png", alt: "EcoNavi 포인트 와이어프레임", caption: "포인트 화면 (Figma 와이어프레임)", bare: true },
+      { src: "assets/econavi/08-mypage.png", alt: "EcoNavi 마이페이지 와이어프레임", caption: "마이페이지 (Figma 와이어프레임)", bare: true },
       { src: "assets/econavi/mockup.svg", alt: "EcoNavi 지도 기반 친환경 활동 화면 목업", caption: "지도 기반 친환경 활동 안내 화면 (AI 목업 이미지)" },
     ],
     retrospective:
