@@ -445,7 +445,8 @@ button { font-family: inherit; }
   background: #14141a;
   box-shadow: 0 28px 60px rgba(20, 20, 40, 0.28);
 }
-.project-row-slide img.is-svg {
+.project-row-slide img.is-svg,
+.project-row-slide img.is-bare {
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -798,3 +799,10 @@ button { font-family: inherit; }
 .resume-status { text-align: center; color: var(--gray-text); padding: 60px 0; }
 .resume-pages { display: flex; flex-direction: column; gap: 20px; }
 .resume-canvas { display: block; background: #fff; border: var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow); max-width: 100%; }
+
+/* 폰 스크린샷이 많은 프로젝트의 상세 갤러리: 2열 격자 */
+.image-gallery.is-phones { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
+.image-card.is-bare { border: none; border-radius: 0; overflow: visible; background: none; }
+.image-card.is-bare img { border-radius: 0; filter: drop-shadow(0 14px 28px rgba(20, 20, 40, 0.22)); }
+.image-card.is-bare figcaption { border-top: none; text-align: center; padding: 14px 6px 0; }
+@media (max-width: 640px) { .image-gallery.is-phones { grid-template-columns: 1fr 1fr; gap: 20px 12px; } }

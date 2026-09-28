@@ -64,8 +64,16 @@ const PROJECTS = [
       { label: "API · 인증", items: ["JWT", "Kakao OAuth2", "Gemini API", "Toss Payments"] },
     ],
     links: { github: "https://github.com/jaehwan0706/checkupAI", demo: "https://checkupai.kro.kr/" },
+    layout: "phones",
     images: [
-      { src: "assets/checkup-ai/dashboard-mockup.svg", alt: "검진AI 건강 리포트 대시보드 목업", caption: "건강 리포트 대시보드 (AI 목업 이미지)" },
+      { src: "assets/checkup-ai/01-splash.png", alt: "검진AI 스플래시 화면", caption: "스플래시", bare: true },
+      { src: "assets/checkup-ai/02-login.png", alt: "검진AI 로그인 화면", caption: "로그인 · 카카오 로그인", bare: true },
+      { src: "assets/checkup-ai/03-home.png", alt: "검진AI 홈 화면", caption: "홈 — AI 건강 점수와 오늘의 케어", bare: true },
+      { src: "assets/checkup-ai/04-input.png", alt: "검진AI 건강 기록 입력 화면", caption: "건강 기록 입력 (약봉투 · 진료기록 · 검진결과)", bare: true },
+      { src: "assets/checkup-ai/05-report.png", alt: "검진AI 건강 리포트 화면", caption: "건강 리포트 — 수치 요약과 AI 한줄 총평", bare: true },
+      { src: "assets/checkup-ai/06-health.png", alt: "검진AI 건강 관리 화면", caption: "건강 관리 — 건강 나이와 AI 맞춤 추천", bare: true },
+      { src: "assets/checkup-ai/07-records.png", alt: "검진AI 기록 화면", caption: "기록", bare: true },
+      { src: "assets/checkup-ai/08-mypage.png", alt: "검진AI 마이페이지 화면", caption: "마이페이지 · 프리미엄", bare: true },
     ],
     retrospective:
       "혼자서 백엔드(Spring Boot) · 웹 · 모바일(Expo) 세 갈래를 동시에 개발하다 보니, 화면마다 API 응답 형식이 조금씩 달라 프론트에서 예외 처리가 늘어나는 문제가 있었습니다. " +
@@ -119,8 +127,10 @@ const PROJECTS = [
       { label: "API · 인증", items: ["E-Gen 공공데이터 API", "Kakao/Google OAuth"] },
     ],
     links: { github: "https://github.com/jaehwan0706/5MIN", demo: "https://5min.kro.kr/" },
+    layout: "phones",
     images: [
       { src: "assets/5min/splash.png", alt: "5MIN 스플래시 화면", caption: "스플래시" },
+      { src: "assets/5min/login.png", alt: "5MIN 로그인 화면", caption: "로그인 — 카카오 · 구글 · 이메일", bare: true },
       { src: "assets/5min/list.png", alt: "응급실 목록 화면", caption: "응급실 목록 · 필터" },
       { src: "assets/5min/map.png", alt: "지도 화면", caption: "지도에서 병상 현황 보기" },
       { src: "assets/5min/goldentime.png", alt: "골든타임 증상 가이드 화면", caption: "골든타임 — 증상별 AI 응급처치 가이드" },
@@ -350,7 +360,7 @@ function renderProjectGrid() {
     const multi = hasImages && p.images.length > 1;
     const media = hasImages
       ? `<div class="project-row-track">
-          ${p.images.map((img) => `<div class="project-row-slide"><img src="${img.src}" alt="${img.alt || ""}" loading="lazy" draggable="false" /></div>`).join("")}
+          ${p.images.map((img) => `<div class="project-row-slide"><img src="${img.src}" alt="${img.alt || ""}" loading="lazy" draggable="false"${img.bare ? ' class="is-bare"' : ""} /></div>`).join("")}
         </div>
         ${multi ? `
           <button class="project-row-arrow project-row-prev" type="button" aria-label="이전 화면">‹</button>
@@ -403,6 +413,7 @@ function setupSlider(mediaEl) {
 
   imgs.forEach((img) => {
     const classify = () => {
+      if (img.classList.contains("is-bare")) return;
       if ((img.getAttribute("src") || "").endsWith(".svg")) img.classList.add("is-svg");
       else if (img.naturalHeight > img.naturalWidth * 1.15) img.classList.add("is-phone");
       else img.classList.add("is-wide");
@@ -482,19 +493,19 @@ function renderProjectDetail(project) {
     </div>
 
     <h2 class="detail-h2">ERD · 이미지</h2>
-    ${renderImageGallery(project.images)}
+    ${renderImageGallery(project.images, project.layout)}
 
     <h2 class="detail-h2">회고</h2>
     ${renderRetrospective(project.retrospective)}
   `;
 }
 
-function renderImageGallery(images) {
+function renderImageGallery(images, layout) {
   if (images && images.length) {
     return `
-      <div class="image-gallery">
+      <div class="image-gallery${layout === "phones" ? " is-phones" : ""}">
         ${images.map((img) => `
-          <figure class="image-card">
+          <figure class="image-card${img.bare ? " is-bare" : ""}">
             <img src="${img.src}" alt="${img.alt || ""}" loading="lazy" />
             ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
           </figure>
