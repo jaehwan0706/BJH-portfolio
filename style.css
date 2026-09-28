@@ -721,3 +721,11 @@ button { font-family: inherit; }
   .menu-cards { flex-direction: column; }
   .footer-nav { gap: 14px; }
 }
+
+/* ================= RESUME VIEWER ================= */
+.resume-page { max-width: 860px; margin: 0 auto; padding: 40px 5% 80px; }
+.resume-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+.resume-bar .back-link { margin-bottom: 0; }
+.resume-status { text-align: center; color: var(--gray-text); padding: 60px 0; }
+.resume-pages { display: flex; flex-direction: column; gap: 20px; }
+.resume-canvas { display: block; background: #fff; border: var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow); max-width: 100%; }

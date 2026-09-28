@@ -3,8 +3,6 @@
 // ==============================
 
 const GITHUB_PROFILE = "https://github.com/jaehwan0706";
-// TODO: 실제 배포 주소가 생기면 프로젝트별로 교체할 임시 링크입니다.
-const DEMO_PLACEHOLDER = "https://www.naver.com";
 
 const ICON_GITHUB = `<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>`;
 const ICON_GLOBE = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.8"/><path d="M1.5 8h13M8 1.4c1.8 1.9 2.8 4.1 2.8 6.6s-1 4.7-2.8 6.6c-1.8-1.9-2.8-4.1-2.8-6.6s1-4.7 2.8-6.6Z"/></svg>`;
@@ -65,7 +63,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL (배포)", "H2 (로컬)"] },
       { label: "API · 인증", items: ["JWT", "Kakao OAuth2", "Gemini API", "Toss Payments"] },
     ],
-    links: { github: "https://github.com/jaehwan0706/checkupAI", demo: DEMO_PLACEHOLDER },
+    links: { github: "https://github.com/jaehwan0706/checkupAI", demo: "https://checkupai.kro.kr/" },
     images: [
       { src: "assets/checkup-ai/dashboard-mockup.svg", alt: "검진AI 건강 리포트 대시보드 목업", caption: "건강 리포트 대시보드 (AI 목업 이미지)" },
     ],
@@ -120,7 +118,7 @@ const PROJECTS = [
       { label: "인프라", items: ["AWS EC2", "Vercel"] },
       { label: "API · 인증", items: ["E-Gen 공공데이터 API", "Kakao/Google OAuth"] },
     ],
-    links: { github: "https://github.com/jaehwan0706/5MIN", demo: DEMO_PLACEHOLDER },
+    links: { github: "https://github.com/jaehwan0706/5MIN", demo: "https://5min.kro.kr/" },
     images: [
       { src: "assets/5min/splash.png", alt: "5MIN 스플래시 화면", caption: "스플래시" },
       { src: "assets/5min/list.png", alt: "응급실 목록 화면", caption: "응급실 목록 · 필터" },

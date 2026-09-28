@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>이력서 | 복재환</title>
+<meta name="description" content="복재환의 이력서" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23f989b3'/%3E%3Ctext x='50' y='68' font-size='52' font-family='sans-serif' font-weight='700' fill='black' text-anchor='middle'%3E복%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="style.css?v=11" />
+<style>
+@font-face { font-family: SUIT; src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: SUIT; src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700&display=swap" />
+</head>
+<body>
+  <main class="resume-page">
+    <div class="resume-bar">
+      <a href="./" class="back-link eng">← 돌아가기</a>
+      <a href="assets/resume.pdf" download="복재환_이력서.pdf" class="detail-link-btn eng">PDF 다운로드</a>
+    </div>
+    <p id="resume-status" class="resume-status">이력서를 불러오는 중...</p>
+    <div id="resume-pages" class="resume-pages"></div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    (function () {
+      var status = document.getElementById("resume-status");
+      var container = document.getElementById("resume-pages");
+
+      function fail() {
+        status.innerHTML = '이력서를 화면에 표시하지 못했어요. <a href="assets/resume.pdf" target="_blank" rel="noopener">PDF 파일 직접 열기</a>';
+      }
+      if (!window.pdfjsLib) { fail(); return; }
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+      pdfjsLib.getDocument("assets/resume.pdf").promise.then(function (pdf) {
+        var width = container.clientWidth || 800;
+        var dpr = window.devicePixelRatio || 1;
+        var chain = Promise.resolve();
+        for (var i = 1; i <= pdf.numPages; i++) {
+          (function (n) {
+            chain = chain.then(function () {
+              return pdf.getPage(n).then(function (page) {
+                var base = page.getViewport({ scale: 1 });
+                var cssScale = width / base.width;
+                var viewport = page.getViewport({ scale: cssScale * dpr });
+                var canvas = document.createElement("canvas");
+                canvas.width = Math.floor(viewport.width);
+                canvas.height = Math.floor(viewport.height);
+                canvas.style.width = width + "px";
+                canvas.style.height = Math.floor(viewport.height / dpr) + "px";
+                canvas.className = "resume-canvas";
+                container.appendChild(canvas);
+                return page.render({ canvasContext: canvas.getContext("2d"), viewport: viewport }).promise;
+              });
+            });
+          })(i);
+        }
+        return chain;
+      }).then(function () {
+        status.hidden = true;
+      }).catch(fail);
+    })();
+  </script>
+</body>
+</html>
