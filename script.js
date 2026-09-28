@@ -92,7 +92,7 @@ const PROJECTS = [
       { label: "LLM · 임베딩", items: ["llama-cpp-python (Qwen GGUF)", "nomic-embed-text"] },
       { label: "데이터 · 문서", items: ["SQLite (sqlite-vec)", "openpyxl", "python-docx", "pypdf"] },
     ],
-    links: { github: GITHUB_PROFILE },
+    links: {},
     images: [
       { src: "assets/nuri/desktop-mockup.svg", alt: "누리 문서 자동화 데스크톱 앱 목업", caption: "문서 자동화 처리 화면 (AI 목업 이미지)" },
     ],
@@ -207,7 +207,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL"] },
       { label: "API · 인증", items: ["JWT", "Spring Security"] },
     ],
-    links: { github: GITHUB_PROFILE },
+    links: { github: "https://github.com/jaehwan0706/sedroad_BE" },
     images: [
       { src: "assets/generation-road/mockup.svg", alt: "세대로드 여행 코스 추천 화면 목업", caption: "세대별 여행 코스 추천 화면 (AI 목업 이미지)" },
     ],
@@ -233,7 +233,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL"] },
       { label: "API · 인증", items: ["Kakao Map API", "JWT", "Spring Security"] },
     ],
-    links: { github: GITHUB_PROFILE },
+    links: { github: "https://github.com/jaehwan0706/econavi-app-BE" },
     images: [
       { src: "assets/econavi/mockup.svg", alt: "EcoNavi 지도 기반 친환경 활동 화면 목업", caption: "지도 기반 친환경 활동 안내 화면 (AI 목업 이미지)" },
     ],
@@ -259,7 +259,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL (PyMySQL)"] },
       { label: "API · 통신", items: ["MQTT (Paho-MQTT)"] },
     ],
-    links: { github: "https://github.com/jaehwan0706/mqtt-vibration-visualizer" },
+    links: {},
     images: [
       { src: "assets/vibration-sensor/mockup.svg", alt: "진동 센서 모니터링 대시보드 목업", caption: "실시간 FFT 스펙트럼 · 센서 상태 대시보드 (AI 목업 이미지)" },
     ],
@@ -380,10 +380,10 @@ function renderProjectGrid() {
           <div class="project-row-tags">
             ${tags.map((t) => `<span class="tag">${t}</span>`).join("")}
           </div>
-          <div class="project-row-links">
-            ${p.links?.github ? `<a class="detail-link-btn eng" href="${p.links.github}" target="_blank" rel="noopener">${ICON_GITHUB} Github 보러가기</a>` : ""}
-            ${p.links?.demo ? `<a class="detail-link-btn eng" href="${p.links.demo}" target="_blank" rel="noopener">${ICON_GLOBE} 홈페이지 보러가기</a>` : ""}
-          </div>
+          ${p.links?.github || p.links?.demo ? `<div class="project-row-links">
+            ${p.links.github ? `<a class="detail-link-btn eng" href="${p.links.github}" target="_blank" rel="noopener">${ICON_GITHUB} Github 보러가기</a>` : ""}
+            ${p.links.demo ? `<a class="detail-link-btn eng" href="${p.links.demo}" target="_blank" rel="noopener">${ICON_GLOBE} 홈페이지 보러가기</a>` : ""}
+          </div>` : ""}
         </div>
       </div>
     `;
