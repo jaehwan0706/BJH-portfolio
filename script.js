@@ -346,24 +346,29 @@ function renderProjectGrid() {
   const list = activeCategory === "전체" ? PROJECTS : PROJECTS.filter((p) => p.category === activeCategory);
 
   el.innerHTML = list.map((p) => {
-    let media;
-    if (p.images && p.images.length) {
-      media = p.images
-        .map((img, i) => `<img class="project-row-img${i === 0 ? " is-active" : ""}" src="${img.src}" alt="" loading="lazy" />`)
-        .join("");
-    } else {
-      media = `<div class="project-row-fallback"><span>${p.emoji}</span></div>`;
-    }
+    const hasImages = p.images && p.images.length;
+    const multi = hasImages && p.images.length > 1;
+    const media = hasImages
+      ? `<div class="project-row-track">
+          ${p.images.map((img) => `<div class="project-row-slide"><img src="${img.src}" alt="${img.alt || ""}" loading="lazy" draggable="false" /></div>`).join("")}
+        </div>
+        ${multi ? `
+          <button class="project-row-arrow project-row-prev" type="button" aria-label="이전 화면">‹</button>
+          <button class="project-row-arrow project-row-next" type="button" aria-label="다음 화면">›</button>
+          <div class="project-row-dots">
+            ${p.images.map((_, i) => `<button class="project-row-dot${i === 0 ? " is-active" : ""}" type="button" aria-label="${i + 1}번째 화면"></button>`).join("")}
+          </div>` : ""}`
+      : `<div class="project-row-fallback"><span>${p.emoji}</span></div>`;
     const tags = p.stack.flatMap((s) => s.items).slice(0, 6);
     return `
       <div class="project-row" data-reveal>
-        <a class="project-row-media" href="#${p.id}">
+        <div class="project-row-media">
           ${media}
-          <div class="project-row-overlay">
+          <a class="project-row-caption" href="#${p.id}">
             <span class="project-row-title">${p.title}.</span>
             <span class="project-row-detail-link">Project Detail <span aria-hidden="true">→</span></span>
-          </div>
-        </a>
+          </a>
+        </div>
         <div class="project-row-info">
           <p class="project-row-tagline">${p.tagline}</p>
           <div class="project-row-heading">
@@ -387,18 +392,44 @@ function renderProjectGrid() {
     `;
   }).join("");
 
-  // 이미지가 여러 장인 프로젝트는 자동으로 순환하며 미리보기를 보여줍니다.
-  el.querySelectorAll(".project-row-media").forEach((mediaEl) => {
-    const imgs = mediaEl.querySelectorAll(".project-row-img");
-    if (imgs.length < 2) return;
-    let idx = 0;
-    const timer = setInterval(() => {
-      imgs[idx].classList.remove("is-active");
-      idx = (idx + 1) % imgs.length;
-      imgs[idx].classList.add("is-active");
-    }, 2800);
-    rowCarouselTimers.push(timer);
+  el.querySelectorAll(".project-row-media").forEach(setupSlider);
+}
+
+// 스크린샷을 화면 비율에 맞는 프레임(폰/웹/SVG)에 담고, 여러 장이면 한 장씩 옆으로 넘깁니다.
+function setupSlider(mediaEl) {
+  const track = mediaEl.querySelector(".project-row-track");
+  if (!track) return;
+  const imgs = [...track.querySelectorAll("img")];
+
+  imgs.forEach((img) => {
+    const classify = () => {
+      if ((img.getAttribute("src") || "").endsWith(".svg")) img.classList.add("is-svg");
+      else if (img.naturalHeight > img.naturalWidth * 1.15) img.classList.add("is-phone");
+      else img.classList.add("is-wide");
+    };
+    if (img.complete && img.naturalWidth) classify();
+    else img.addEventListener("load", classify, { once: true });
   });
+
+  const n = imgs.length;
+  if (n < 2) return;
+  const dots = [...mediaEl.querySelectorAll(".project-row-dot")];
+  let idx = 0;
+  let paused = false;
+
+  const go = (i) => {
+    idx = (i + n) % n;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dots.forEach((d, k) => d.classList.toggle("is-active", k === idx));
+  };
+
+  mediaEl.querySelector(".project-row-prev").addEventListener("click", () => go(idx - 1));
+  mediaEl.querySelector(".project-row-next").addEventListener("click", () => go(idx + 1));
+  dots.forEach((d, k) => d.addEventListener("click", () => go(k)));
+  mediaEl.addEventListener("mouseenter", () => { paused = true; });
+  mediaEl.addEventListener("mouseleave", () => { paused = false; });
+
+  rowCarouselTimers.push(setInterval(() => { if (!paused) go(idx + 1); }, 3200));
 }
 
 function renderProjectDetail(project) {
