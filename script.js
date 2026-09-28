@@ -65,7 +65,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL (배포)", "H2 (로컬)"] },
       { label: "API · 인증", items: ["JWT", "Kakao OAuth2", "Gemini API", "Toss Payments"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: "https://github.com/jaehwan0706/checkupAI", demo: DEMO_PLACEHOLDER },
     images: [
       { src: "assets/checkup-ai/dashboard-mockup.svg", alt: "검진AI 건강 리포트 대시보드 목업", caption: "건강 리포트 대시보드 (AI 목업 이미지)" },
     ],
@@ -120,7 +120,7 @@ const PROJECTS = [
       { label: "인프라", items: ["AWS EC2", "Vercel"] },
       { label: "API · 인증", items: ["E-Gen 공공데이터 API", "Kakao/Google OAuth"] },
     ],
-    links: { github: GITHUB_PROFILE, demo: DEMO_PLACEHOLDER },
+    links: { github: "https://github.com/jaehwan0706/5MIN", demo: DEMO_PLACEHOLDER },
     images: [
       { src: "assets/5min/splash.png", alt: "5MIN 스플래시 화면", caption: "스플래시" },
       { src: "assets/5min/list.png", alt: "응급실 목록 화면", caption: "응급실 목록 · 필터" },
@@ -149,7 +149,7 @@ const PROJECTS = [
       { label: "인증 · 지갑", items: ["Web3Auth", "Octomo"] },
       { label: "블록체인", items: ["Hyperledger Fabric (포인트)", "Ethereum (NFT 래플)"] },
     ],
-    links: { github: GITHUB_PROFILE },
+    links: { github: "https://github.com/jaehwan0706/NOFAKE" },
     images: [
       { src: "assets/nofake/hero.png", alt: "NOFAKE 포인트 교환 메인 화면", caption: "포인트 교환 플랫폼 메인" },
       { src: "assets/nofake/raffle-list.png", alt: "래플 이벤트 목록", caption: "진행 중인 래플 이벤트" },
@@ -178,7 +178,7 @@ const PROJECTS = [
       { label: "DB", items: ["MySQL"] },
       { label: "API · 연동", items: ["국립중앙의료원 Open API", "Kakao Map API"] },
     ],
-    links: { github: GITHUB_PROFILE },
+    links: { github: "https://github.com/jaehwan0706/Goldenlink" },
     images: [
       { src: "assets/goldenlink/hospital-finder.png", alt: "병원·응급실 찾기 메인 화면", caption: "지도 기반 응급의료시설 찾기" },
       { src: "assets/goldenlink/first-aid-guide.png", alt: "상황별 응급처치 가이드 화면", caption: "상황별 응급처치 가이드" },
