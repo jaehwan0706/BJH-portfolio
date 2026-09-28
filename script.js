@@ -100,7 +100,10 @@ const PROJECTS = [
     ],
     links: {},
     images: [
-      { src: "assets/nuri/desktop-mockup.svg", alt: "누리 문서 자동화 데스크톱 앱 목업", caption: "문서 자동화 처리 화면 (AI 목업 이미지)" },
+      { src: "assets/nuri/01-start.png", alt: "누리 수출 문서 자동생성 첫 화면", caption: "수출 문서 자동생성 — 시작 화면" },
+      { src: "assets/nuri/02-chat.png", alt: "누리 채팅으로 수출 문서 생성 화면", caption: "채팅으로 요청하면 처리 과정이 타임라인에 기록", bare: true },
+      { src: "assets/nuri/03-help.png", alt: "누리가 할 수 있는 일 도움말 화면", caption: "도움말 — 누리가 할 수 있는 일", bare: true },
+      { src: "assets/nuri/04-result.png", alt: "누리 문서 자동 입력 결과 표 화면", caption: "생성된 결과 — 항목별 값과 출처 확인", bare: true },
     ],
     retrospective:
       "v1(통합) → v2(DB 조회 + 데스크톱 펫 마스코트 UI) → v3(국가별 커스터마이징 + 실시간 작성 뷰) 순으로 반복 개선했습니다. " +
@@ -163,6 +166,7 @@ const PROJECTS = [
       { src: "assets/nofake/raffle-list.png", alt: "래플 이벤트 목록", caption: "진행 중인 래플 이벤트" },
       { src: "assets/nofake/trust-stats.png", alt: "신뢰 지표 및 래플 진행 방식", caption: "공정성 지표 · 3단계 래플 진행" },
       { src: "assets/nofake/phone-verify.png", alt: "휴대폰 본인 확인 화면", caption: "휴대폰 본인 확인" },
+      { src: "assets/nofake/figma-overview.png", alt: "NOFAKE Figma 화면 설계 전체", caption: "Figma 화면 설계 전체 보기", wide: true },
     ],
     retrospective:
       "포인트 교환(Hyperledger Fabric)과 NFT 래플(Ethereum)이라는 서로 다른 두 블록체인을 한 서비스 안에서 자연스럽게 연결하는 게 가장 큰 과제였습니다. " +
@@ -192,6 +196,7 @@ const PROJECTS = [
       { src: "assets/goldenlink/first-aid-guide.png", alt: "상황별 응급처치 가이드 화면", caption: "상황별 응급처치 가이드" },
       { src: "assets/goldenlink/signup.png", alt: "회원가입 화면", caption: "회원가입" },
       { src: "assets/erd-goldenlink.svg", alt: "Goldenlink ERD", caption: "schema.sql 기반 ERD — EntityUser · boards · comments · bookmarks" },
+      { src: "assets/goldenlink/figma-overview.png", alt: "Goldenlink Figma 화면 설계 전체", caption: "Figma 화면 설계 전체 보기", wide: true },
     ],
     retrospective:
       "9일이라는 짧은 기간 안에 ERD부터 확정해야 해서, 초반 며칠은 스키마 설계에 집중했습니다. " +
@@ -244,6 +249,7 @@ const PROJECTS = [
     links: { github: "https://github.com/jaehwan0706/econavi-app-BE" },
     images: [
       { src: "assets/econavi/mockup.svg", alt: "EcoNavi 지도 기반 친환경 활동 화면 목업", caption: "지도 기반 친환경 활동 안내 화면 (AI 목업 이미지)" },
+      { src: "assets/econavi/figma-overview.png", alt: "EcoNavi Figma 화면 설계 전체", caption: "Figma 화면 설계 전체 보기", wide: true },
     ],
     retrospective:
       "JWT 인증과 함께 AccessHandler로 리소스별 접근 제어를 직접 구현하면서, Spring Security의 필터 체인 순서를 이해하는 데 시간을 썼습니다. " +
@@ -360,7 +366,7 @@ function renderProjectGrid() {
     const multi = hasImages && p.images.length > 1;
     const media = hasImages
       ? `<div class="project-row-track">
-          ${p.images.map((img) => `<div class="project-row-slide"><img src="${img.src}" alt="${img.alt || ""}" loading="lazy" draggable="false"${img.bare ? ' class="is-bare"' : ""} /></div>`).join("")}
+          ${p.images.map((img) => `<div class="project-row-slide"><img src="${img.src}" alt="${img.alt || ""}" loading="lazy" draggable="false"${img.bare ? ' class="is-bare"' : img.wide ? ' class="is-wide"' : ""} /></div>`).join("")}
         </div>
         ${multi ? `
           <button class="project-row-arrow project-row-prev" type="button" aria-label="이전 화면">‹</button>
@@ -413,7 +419,7 @@ function setupSlider(mediaEl) {
 
   imgs.forEach((img) => {
     const classify = () => {
-      if (img.classList.contains("is-bare")) return;
+      if (img.classList.contains("is-bare") || img.classList.contains("is-wide")) return;
       if ((img.getAttribute("src") || "").endsWith(".svg")) img.classList.add("is-svg");
       else if (img.naturalHeight > img.naturalWidth * 1.15) img.classList.add("is-phone");
       else img.classList.add("is-wide");
