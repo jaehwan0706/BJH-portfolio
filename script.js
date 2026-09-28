@@ -162,11 +162,13 @@ const PROJECTS = [
     ],
     links: { github: "https://github.com/jaehwan0706/NOFAKE" },
     images: [
+      { src: "assets/nofake/main-page.png", alt: "NOFAKE 메인 페이지", caption: "메인 페이지 — 래플 · 통계 · 핵심 가치", wide: true },
       { src: "assets/nofake/hero.png", alt: "NOFAKE 포인트 교환 메인 화면", caption: "포인트 교환 플랫폼 메인" },
       { src: "assets/nofake/raffle-list.png", alt: "래플 이벤트 목록", caption: "진행 중인 래플 이벤트" },
       { src: "assets/nofake/trust-stats.png", alt: "신뢰 지표 및 래플 진행 방식", caption: "공정성 지표 · 3단계 래플 진행" },
       { src: "assets/nofake/phone-verify.png", alt: "휴대폰 본인 확인 화면", caption: "휴대폰 본인 확인" },
-      { src: "assets/nofake/figma-overview.png", alt: "NOFAKE Figma 화면 설계 전체", caption: "Figma 화면 설계 전체 보기", wide: true },
+      { src: "assets/nofake/service-intro.png", alt: "NOFAKE 서비스 소개 페이지", caption: "서비스 소개 — 기술로 증명하는 공정한 래플", wide: true },
+      { src: "assets/nofake/support.png", alt: "NOFAKE 고객센터 페이지", caption: "고객센터", wide: true },
     ],
     retrospective:
       "포인트 교환(Hyperledger Fabric)과 NFT 래플(Ethereum)이라는 서로 다른 두 블록체인을 한 서비스 안에서 자연스럽게 연결하는 게 가장 큰 과제였습니다. " +
@@ -196,7 +198,6 @@ const PROJECTS = [
       { src: "assets/goldenlink/first-aid-guide.png", alt: "상황별 응급처치 가이드 화면", caption: "상황별 응급처치 가이드" },
       { src: "assets/goldenlink/signup.png", alt: "회원가입 화면", caption: "회원가입" },
       { src: "assets/erd-goldenlink.svg", alt: "Goldenlink ERD", caption: "schema.sql 기반 ERD — EntityUser · boards · comments · bookmarks" },
-      { src: "assets/goldenlink/figma-overview.png", alt: "Goldenlink Figma 화면 설계 전체", caption: "Figma 화면 설계 전체 보기", wide: true },
     ],
     retrospective:
       "9일이라는 짧은 기간 안에 ERD부터 확정해야 해서, 초반 며칠은 스키마 설계에 집중했습니다. " +
@@ -249,7 +250,6 @@ const PROJECTS = [
     links: { github: "https://github.com/jaehwan0706/econavi-app-BE" },
     images: [
       { src: "assets/econavi/mockup.svg", alt: "EcoNavi 지도 기반 친환경 활동 화면 목업", caption: "지도 기반 친환경 활동 안내 화면 (AI 목업 이미지)" },
-      { src: "assets/econavi/figma-overview.png", alt: "EcoNavi Figma 화면 설계 전체", caption: "Figma 화면 설계 전체 보기", wide: true },
     ],
     retrospective:
       "JWT 인증과 함께 AccessHandler로 리소스별 접근 제어를 직접 구현하면서, Spring Security의 필터 체인 순서를 이해하는 데 시간을 썼습니다. " +
